@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+}
+
+#header {
+    display: inline-block;
+}
+
+hr {
+    border: 10px solid black;
+}
+
+.TimeBlock {
+    float: left;
+    margin: 0px -10px 0px 30px;
+    /* border: 1px solid black; */
+}
+
+.ActionBox {
+    clear: both;
+    height: 50px;
+    overflow-wrap: break-word;
+    background-color: bisque;
+}
+
+.SaveAction {
+    float: right;
+    height: 50px;
+}
