@@ -6,7 +6,7 @@
   <meta name="description" content="Hourly work day planner">
   <meta name="author" content="Anthony Garces">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -35,22 +35,22 @@
             <div class="TimeBlock">
                 10AM
             </div>
-            <input type="text" class="ActionBox" size="100"></input>
-            <input type="submit" class="SaveAction" value="Save Activity"></input>
+            <input id="ActionBox2" type="text" class="ActionBox" name=10AM size="100"></input>
+            <input id="Save2" type="submit" class="SaveAction" value="Save Activity"></input>
         </form>
         <form id="hr11">
             <div class="TimeBlock">
                 11AM
             </div>
-            <input type="text" class="ActionBox" size="100"></input>
-            <input type="submit" class="SaveAction" value="Save Activity"></input>
+            <input type="text" id="ActionBox3" class="ActionBox" size="100"></input>
+            <input type="submit" id="Save3" class="SaveAction" value="Save Activity"></input>
         </form>
         <form id="hr12">
             <div class="TimeBlock">
                 12PM
             </div>
-            <input type="text" class="ActionBox" size="100"></input>
-            <input type="submit" class="SaveAction" value="Save Activity"></input>
+            <input type="text" id="ActionBox4" class="ActionBox" size="100"></input>
+            <input type="submit" id="Save4" class="SaveAction" value="Save Activity"></input>
         </form>
         <form id="hr1">
             <div class="TimeBlock">
@@ -89,6 +89,7 @@
         </form>
         
     </div>
-  <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
