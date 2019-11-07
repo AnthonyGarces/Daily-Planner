@@ -12,7 +12,9 @@ const actionBox7 = $("#ActionBox7");
 const actionBox8 = $("#ActionBox8");
 const actionBox9 = $("#ActionBox9");
 const form2 = $("");
+const timeBox = document.getElementsByTagName("span");
 var time = 
+
 
 
 
@@ -21,6 +23,11 @@ var time =
 //moment() is how you call the current time with moments.js
 //look up methods in the moments.js documentation to learn how to manipulate that data
 console.log(moment());
+function dispTime() {
+    timeBox[0].append(moment().subtract(10, 'days').calendar());
+    console.log(timeBox[0].val);
+}
+dispTime();
 $("#Save1").on("click", function(e) {
     e.preventDefault();
     var time= actionBox1.attr("name");
