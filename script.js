@@ -15,22 +15,30 @@ const form2 = $("");
 const timeBox = document.getElementsByTagName("span");
 var time = 
 
+function colorTask() {
+    time = actionBox1.attr("name");
+    if (time < moment().hour()){
+    time.css("background-color", "Red")
+    } else if (time = moment().hour()) {
+    time.css("background-color", "Gray")
+    } else if (time > moment().hour()) {
+    time.css("background-color", "Green")
+    }
+};
+//not working
+// colorTask();
 
-
-
-//Need to take the input and store it in an array
-//need to 
-//moment() is how you call the current time with moments.js
-//look up methods in the moments.js documentation to learn how to manipulate that data
-console.log(moment());
+//also not working
 function dispTime() {
-    timeBox[0].append(moment().subtract(10, 'days').calendar());
-    console.log(timeBox[0].val);
+    $("#Date").text(JSON.stringify(moment().format('dddd, MMMM Do, hh:mm')))
 }
-dispTime();
+
+
+//Save info on click functions
+
 $("#Save1").on("click", function(e) {
     e.preventDefault();
-    var time= actionBox1.attr("name");
+    time= actionBox1.attr("name");
     var action = actionBox1.val();
     localStorage.setItem(time, action);
 });
@@ -90,6 +98,7 @@ $("#Save9").on("click", function(e) {
     var action = actionBox9.val();
     localStorage.setItem(time, action);
 });
+function dispTask(){
 actionBox1.val(localStorage.getItem("09AM"));  
 actionBox2.val(localStorage.getItem("10AM"));
 actionBox3.val(localStorage.getItem("11AM"));
@@ -98,7 +107,11 @@ actionBox5.val(localStorage.getItem("01PM"));
 actionBox6.val(localStorage.getItem("02PM"));    
 actionBox7.val(localStorage.getItem("03PM"));    
 actionBox8.val(localStorage.getItem("04PM"));    
-actionBox9.val(localStorage.getItem("05PM"));    
+actionBox9.val(localStorage.getItem("05PM"));
+};
+
+dispTime();
+dispTask();
 
 
 //as a challenge, see if i can write the code to run on a single click event
