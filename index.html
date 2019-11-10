@@ -1,94 +1,118 @@
-<!Doctype HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Daily Planner</title>
-  <meta name="description" content="Hourly work day planner">
-  <meta name="author" content="Anthony Garces">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="style.css"> -->
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-    </script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
 
-<body>
-    <div id="header">
-        <H1>Work Day Scheduler</H1>
-        <p>This is a simple day calendar designed to help you plan out your day</p>
-        <span id="Date"></span>
-        <br>
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container time-block">
+        <form id="hr9" class="row">
+            <div class="hour">
+                <span id=time1>09</span>AM
+            </div>
+            <input type="text" id="ActionBox1" class="ActionBox" name=09></input>
+            <input type="submit" id="Save1" class="saveBtn" value="Save Activity"></input>
+        </form>
     </div>
-    <hr>
-    <div id="Entire Schedule">
-        <form id="hr9">
-            <div class="TimeBlock">
-                09AM
+    <div class="container time-block">
+        <form id="hr10" class="row">
+            <div class="hour">
+                <span id=time2>10</span>AM
             </div>
-            <input type="text" id="ActionBox1" class="ActionBox" name=9 size="100"></input>
-            <input type="submit" id="Save1" class="SaveAction" value="Save Activity"></input>
+            <input type="text" id="ActionBox2" class="ActionBox" name=10></input>
+            <input type="submit" id="Save2" class="saveBtn" value="Save Activity"></input>
         </form>
-        <form id="hr10">
-            <div class="TimeBlock">
-                10AM
-            </div>
-            <input id="ActionBox2" type="text" class="ActionBox" name=10AM size="100"></input>
-            <input id="Save2" type="submit" class="SaveAction" value="Save Activity"></input>
-        </form>
-        <form id="hr11">
-            <div class="TimeBlock">
-                11AM
-            </div>
-            <input type="text" id="ActionBox3" class="ActionBox" name=11AM size="100"></input>
-            <input type="submit" id="Save3" class="SaveAction" value="Save Activity"></input>
-        </form>
-        <form id="hr12">
-            <div class="TimeBlock">
-                12PM
-            </div>
-            <input type="text" id="ActionBox4" class="ActionBox" name=12PM size="100"></input>
-            <input type="submit" id="Save4" class="SaveAction" value="Save Activity"></input>
-        </form>
-        <form id="hr1">
-            <div class="TimeBlock">
-                1PM
-            </div>
-            <input type="text" id="ActionBox5" class="ActionBox" name=01PM size="100"></input>
-            <input type="submit" id="Save5" class="SaveAction" value="Save Activity"></input>
-        </form>
-        <form id="hr2">
-            <div class="TimeBlock">
-                2PM
-            </div>
-            <input type="text" id="ActionBox6" class="ActionBox" name=02PM size="100"></input>
-            <input type="submit" id="Save6" class="SaveAction" value="Save Activity"></input>
-        </form>
-        <form id="hr3">
-            <div class="TimeBlock">
-                3PM
-            </div>
-            <input type="text" id="ActionBox7" class="ActionBox" name=03PM size="100"></input>
-            <input type="submit" id="Save7" class="SaveAction" value="Save Activity"></input>
-        </form>
-        <form id="hr4">
-            <div class="TimeBlock">
-                4PM
-            </div>
-            <input type="text" id="ActionBox8" class="ActionBox" name=04PM size="100"></input>
-            <input type="submit" id="Save8" class="SaveAction" value="Save Activity"></input>
-        </form>
-        <form id="hr5">
-            <div class="TimeBlock">
-                5PM
-            </div>
-            <input type="text" id="ActionBox9" class="ActionBox" name=05PM size="100"></input>
-            <input type="submit" id="Save9" class="SaveAction" value="Save Activity"></input>
-        </form>
-        
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-  <script src="script.js"></script>
-</body>
+    <div class="container time-block">
+        <form id="hr11" class="row">
+            <div class="hour">
+                <span id=time3>11</span>AM
+            </div>
+            <input type="text" id="ActionBox3" class="ActionBox" name=11></input>
+            <input type="submit" id="Save3" class="saveBtn" value="Save Activity"></input>
+        </form>
+    </div>
+    <div class="container time-block">
+        <form id="hr12" class="row">
+            <div class="hour">
+                <span id=time4>12</span>PM
+            </div>
+            <input type="text" id="ActionBox4" class="ActionBox" name=12></input>
+            <input type="submit" id="Save4" class="saveBtn" value="Save Activity"></input>
+        </form>
+    </div>
+    <div class="container time-block">
+        <form id="hr13" class="row">
+            <div class="hour">
+                <span id=time5>1</span>PM
+            </div>
+            <input type="text" id="ActionBox5" class="ActionBox" name=13></input>
+            <input type="submit" id="Save5" class="saveBtn" value="Save Activity"></input>
+        </form>
+    </div>
+    <div class="container time-block">
+        <form id="hr14" class="row">
+            <div class="hour">
+                <span id=time6>2</span>PM
+            </div>
+            <input type="text" id="ActionBox6" class="ActionBox" name=14></input>
+            <input type="submit" id="Save6" class="saveBtn" value="Save Activity"></input>
+        </form>
+    </div>
+    <div class="container time-block">
+        <form id="hr15" class="row">
+            <div class="hour">
+                <span id=time7>3</span>PM
+            </div>
+            <input type="text" id="ActionBox7" class="ActionBox" name=15></input>
+            <input type="submit" id="Save7" class="saveBtn" value="Save Activity"></input>
+        </form>
+    </div>
+    <div class="container time-block">
+        <form id="hr16" class="row">
+            <div class="hour">
+                <span id=time8>4</span>PM
+            </div>
+            <input type="text" id="ActionBox8" class="ActionBox" name=16></input>
+            <input type="submit" id="Save8" class="saveBtn" value="Save Activity"></input>
+        </form>
+    </div>
+    <div class="container time-block">
+        <form id="hr17" class="row">
+            <div class="hour">
+                <span id=time9>5</span>PM
+            </div>
+            <input type="text" id="ActionBox9" class="ActionBox" name=17></input>
+            <input type="submit" id="Save9" class="saveBtn" value="Save Activity"></input>
+        </form>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

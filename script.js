@@ -1,36 +1,90 @@
-const actionBox = document.getElementsByClassName("ActionBox");
-const saveAction = document.getElementsByClassName("SaveAction");
-const actionArea = document.getElementsByClassName("ActionArea");
-// var actionBox = [$("#ActionBox1"), $("#ActionBox2")]
-const actionBox1 = $("#ActionBox1");
-const actionBox2 = $("#ActionBox2");
-const actionBox3 = $("#ActionBox3");
-const actionBox4 = $("#ActionBox4");
-const actionBox5 = $("#ActionBox5");
-const actionBox6 = $("#ActionBox6");
-const actionBox7 = $("#ActionBox7");
-const actionBox8 = $("#ActionBox8");
-const actionBox9 = $("#ActionBox9");
-const form2 = $("");
-const timeBox = document.getElementsByTagName("span");
-var time = 
+var actionBox = [
+    $("#ActionBox1"), $("#ActionBox2"), $("#ActionBox3"),
+    $("#ActionBox4"), $("#ActionBox5"), $("#ActionBox6"),
+    $("#ActionBox7"), $("#ActionBox8"), $("#ActionBox9"),]
+var currTime = moment().format('kk');
+var boxTime = [
+    actionBox[0].attr("name"), actionBox[1].attr("name"), actionBox[2].attr("name"),
+    actionBox[3].attr("name"), actionBox[4].attr("name"), actionBox[5].attr("name"),
+    actionBox[6].attr("name"), actionBox[7].attr("name"), actionBox[8].attr("name")
+];
 
-function colorTask() {
-    time = actionBox1.attr("name");
-    if (time < moment().hour()){
-    time.css("background-color", "Red")
-    } else if (time = moment().hour()) {
-    time.css("background-color", "Gray")
-    } else if (time > moment().hour()) {
-    time.css("background-color", "Green")
-    }
-};
-//not working
-// colorTask();
+//if else if statements toggling necessary class
+if (boxTime[0] < currTime) {
+    actionBox[0].last().addClass("past");
+} else if (boxTime[0] == currTime){
+    actionBox[0].last().addClass("present");
+} else if (boxTime[0] > currTime) {
+    actionBox[0].last().addClass("future");
+}
 
-//also not working
+if (boxTime[1] < currTime) {
+    actionBox[1].last().addClass("past");
+} else if (boxTime[1] == currTime){
+    actionBox[1].last().addClass("present");
+} else if (boxTime[1] > currTime) {
+    actionBox[1].last().addClass("future");
+}
+
+if (boxTime[2] < currTime) {
+    actionBox[2].last().addClass("past");
+} else if (boxTime[2] == currTime){
+    actionBox[2].last().addClass("present");
+} else if (boxTime[2] > currTime) {
+    actionBox[2].last().addClass("future");
+}
+
+if (boxTime[3] < currTime) {
+    actionBox[3].last().addClass("past");
+} else if (boxTime[3] == currTime){
+    actionBox[3].last().addClass("present");
+} else if (boxTime[3] > currTime) {
+    actionBox[3].last().addClass("future");
+}
+
+if (boxTime[4] < currTime) {
+    actionBox[4].last().addClass("past");
+} else if (boxTime[4] == currTime){
+    actionBox[4].last().addClass("present");
+} else if (boxTime[4] > currTime) {
+    actionBox[4].last().addClass("future");
+}
+
+if (boxTime[5] < currTime) {
+    actionBox[5].last().addClass("past");
+} else if (boxTime[5] == currTime){
+    actionBox[5].last().addClass("present");
+} else if (boxTime[5] > currTime) {
+    actionBox[5].last().addClass("future");
+}
+
+if (boxTime[6] < currTime) {
+    actionBox[6].last().addClass("past");
+} else if (boxTime[6] == currTime){
+    actionBox[6].last().addClass("present");
+} else if (boxTime[6] > currTime) {
+    actionBox[6].last().addClass("future");
+}
+
+if (boxTime[7] < currTime) {
+    actionBox[7].last().addClass("past");
+} else if (boxTime[7] == currTime){
+    actionBox[7].last().addClass("present");
+} else if (boxTime[7] > currTime) {
+    actionBox[7].last().addClass("future");
+}
+
+if (boxTime[8] < currTime) {
+    actionBox[8].last().addClass("past");
+} else if (boxTime[8] == currTime){
+    actionBox[8].last().addClass("present");
+} else if (boxTime[8] > currTime) {
+    actionBox[8].last().addClass("future");
+}
+
+
 function dispTime() {
-    $("#Date").text(JSON.stringify(moment().format('dddd, MMMM Do, hh:mm')))
+    $("#currentDay").text(JSON.stringify(moment().format('dddd, MMMM Do, hh')) + "ish")
 }
 
 
@@ -38,82 +92,71 @@ function dispTime() {
 
 $("#Save1").on("click", function(e) {
     e.preventDefault();
-    time= actionBox1.attr("name");
-    var action = actionBox1.val();
-    localStorage.setItem(time, action);
+    var action = actionBox[0].val();
+    localStorage.setItem(boxTime[0], action);
 });
 
 $("#Save2").on("click", function(e) {
     e.preventDefault();
-    var time= actionBox2.attr("name");
-    var action = actionBox2.val();
-    localStorage.setItem(time, action);
+    
+    var action = actionBox[1].val();
+    localStorage.setItem(boxTime[1], action);
 });
 
 $("#Save3").on("click", function(e) {
     e.preventDefault();
-    var time= actionBox3.attr("name");
-    var action = actionBox3.val();
-    localStorage.setItem(time, action);
+    var action = actionBox[2].val();
+    localStorage.setItem(boxTime[2], action);
 });
 
 $("#Save4").on("click", function(e) {
     e.preventDefault();
-    var time= actionBox4.attr("name");
-    var action = actionBox4.val();
-    localStorage.setItem(time, action);
+    var action = actionBox[3].val();
+    localStorage.setItem(boxTime[3], action);
 });
 
 $("#Save5").on("click", function(e) {
     e.preventDefault();
-    var time= actionBox5.attr("name");
-    var action = actionBox5.val();
-    localStorage.setItem(time, action);
+    var action = actionBox[4].val();
+    localStorage.setItem(boxTime[4], action);
 });
 
 $("#Save6").on("click", function(e) {
     e.preventDefault();
-    var time= actionBox6.attr("name");
-    var action = actionBox6.val();
-    localStorage.setItem(time, action);
+    var action = actionBox[5].val();
+    localStorage.setItem(boxTime[5], action);
 });
 
 $("#Save7").on("click", function(e) {
     e.preventDefault();
-    var time= actionBox7.attr("name");
-    var action = actionBox7.val();
-    localStorage.setItem(time, action);
+    var action = actionBox[6].val();
+    localStorage.setItem(boxTime[6], action);
 });
 
 $("#Save8").on("click", function(e) {
     e.preventDefault();
-    var time= actionBox8.attr("name");
-    var action = actionBox8.val();
-    localStorage.setItem(time, action);
+    var action = actionBox[7].val();
+    localStorage.setItem(boxTime[7], action);
 });
 
 $("#Save9").on("click", function(e) {
     e.preventDefault();
-    var time= actionBox9.attr("name");
-    var action = actionBox9.val();
-    localStorage.setItem(time, action);
+    var action = actionBox[8].val();
+    localStorage.setItem(boxTime[8], action);
 });
 function dispTask(){
-actionBox1.val(localStorage.getItem("09AM"));  
-actionBox2.val(localStorage.getItem("10AM"));
-actionBox3.val(localStorage.getItem("11AM"));
-actionBox4.val(localStorage.getItem("12PM"));   
-actionBox5.val(localStorage.getItem("01PM"));    
-actionBox6.val(localStorage.getItem("02PM"));    
-actionBox7.val(localStorage.getItem("03PM"));    
-actionBox8.val(localStorage.getItem("04PM"));    
-actionBox9.val(localStorage.getItem("05PM"));
+actionBox[0].val(localStorage.getItem("09"));  
+actionBox[1].val(localStorage.getItem("10"));
+actionBox[2].val(localStorage.getItem("11"));
+actionBox[3].val(localStorage.getItem("12"));   
+actionBox[4].val(localStorage.getItem("13"));    
+actionBox[5].val(localStorage.getItem("14"));    
+actionBox[6].val(localStorage.getItem("15"));    
+actionBox[7].val(localStorage.getItem("16"));    
+actionBox[8].val(localStorage.getItem("17"));
 };
 
 dispTime();
 dispTask();
 
 
-//as a challenge, see if i can write the code to run on a single click event
-//siblings on a dom tree, look up jquery methods, each method specifically, tables are places to look
-//the traversing doms methods on the cheatsheet is where i wanna look
