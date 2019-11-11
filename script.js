@@ -3,6 +3,7 @@ var actionBox = [
     $("#ActionBox4"), $("#ActionBox5"), $("#ActionBox6"),
     $("#ActionBox7"), $("#ActionBox8"), $("#ActionBox9"),]
 var currTime = moment().format('kk');
+//name attr is the time in military time, to be compared to currTime for the if else statements
 var boxTime = [
     actionBox[0].attr("name"), actionBox[1].attr("name"), actionBox[2].attr("name"),
     actionBox[3].attr("name"), actionBox[4].attr("name"), actionBox[5].attr("name"),
@@ -89,71 +90,23 @@ function dispTime() {
 
 
 //Save info on click functions
-
-$("#Save1").on("click", function(e) {
+$(".saveBtn").on("click", function(e) {
     e.preventDefault();
-    var action = actionBox[0].val();
-    localStorage.setItem(boxTime[0], action);
+    var value=$(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+    localStorage.setItem(time, value);
 });
 
-$("#Save2").on("click", function(e) {
-    e.preventDefault();
-    
-    var action = actionBox[1].val();
-    localStorage.setItem(boxTime[1], action);
-});
-
-$("#Save3").on("click", function(e) {
-    e.preventDefault();
-    var action = actionBox[2].val();
-    localStorage.setItem(boxTime[2], action);
-});
-
-$("#Save4").on("click", function(e) {
-    e.preventDefault();
-    var action = actionBox[3].val();
-    localStorage.setItem(boxTime[3], action);
-});
-
-$("#Save5").on("click", function(e) {
-    e.preventDefault();
-    var action = actionBox[4].val();
-    localStorage.setItem(boxTime[4], action);
-});
-
-$("#Save6").on("click", function(e) {
-    e.preventDefault();
-    var action = actionBox[5].val();
-    localStorage.setItem(boxTime[5], action);
-});
-
-$("#Save7").on("click", function(e) {
-    e.preventDefault();
-    var action = actionBox[6].val();
-    localStorage.setItem(boxTime[6], action);
-});
-
-$("#Save8").on("click", function(e) {
-    e.preventDefault();
-    var action = actionBox[7].val();
-    localStorage.setItem(boxTime[7], action);
-});
-
-$("#Save9").on("click", function(e) {
-    e.preventDefault();
-    var action = actionBox[8].val();
-    localStorage.setItem(boxTime[8], action);
-});
 function dispTask(){
-actionBox[0].val(localStorage.getItem("09"));  
-actionBox[1].val(localStorage.getItem("10"));
-actionBox[2].val(localStorage.getItem("11"));
-actionBox[3].val(localStorage.getItem("12"));   
-actionBox[4].val(localStorage.getItem("13"));    
-actionBox[5].val(localStorage.getItem("14"));    
-actionBox[6].val(localStorage.getItem("15"));    
-actionBox[7].val(localStorage.getItem("16"));    
-actionBox[8].val(localStorage.getItem("17"));
+actionBox[0].val(localStorage.getItem("hr9"));  
+actionBox[1].val(localStorage.getItem("hr10"));
+actionBox[2].val(localStorage.getItem("hr11"));
+actionBox[3].val(localStorage.getItem("hr12"));   
+actionBox[4].val(localStorage.getItem("hr13"));    
+actionBox[5].val(localStorage.getItem("hr14"));    
+actionBox[6].val(localStorage.getItem("hr15"));    
+actionBox[7].val(localStorage.getItem("hr16"));    
+actionBox[8].val(localStorage.getItem("hr17"));
 };
 
 dispTime();
